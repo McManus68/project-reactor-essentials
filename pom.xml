@@ -15,6 +15,7 @@
         <lombok.version>1.18.4</lombok.version>
         <junit-jupiter-api.version>5.7.0</junit-jupiter-api.version>
         <slf4j-api.version>1.7.5</slf4j-api.version>
+        <blockhound.version>1.0.4.RELEASE</blockhound.version>
     </properties>
 
     <dependencies>
@@ -40,6 +41,12 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.projectreactor.tools</groupId>
+            <artifactId>blockhound</artifactId>
+            <version>${blockhound.version}</version>
         </dependency>
 
         <!-- TEST -->

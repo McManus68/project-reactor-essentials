@@ -1,10 +1,18 @@
 package academy.devdojo.reactive.test;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.reactivestreams.Subscription;
+import reactor.blockhound.BlockHound;
+import reactor.blockhound.BlockingOperationError;
 import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
 import reactor.test.StepVerifier;
+
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 /*
@@ -23,6 +31,11 @@ import reactor.test.StepVerifier;
  * 3. There is an error. (onError) -> subscriber and subscription will be canceled
  */
 public class MonoTest {
+
+    @BeforeAll
+    public static void setUp(){
+        log.info("before all");
+    }
 
     @Test
     public void monoSubscriber(){
